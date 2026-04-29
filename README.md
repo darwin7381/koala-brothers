@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Koala Brothers
 
-## Getting Started
+Marketing site for **Koala Brothers LLC** — an AI studio building the **Personal Agent OS** for the one-person company era.
 
-First, run the development server:
+Live at [koalabro.co](https://koalabro.co) (preview: [koala-brothers.pages.dev](https://koala-brothers.pages.dev)).
+
+## Stack
+
+- Next.js 16 (App Router, static export)
+- Tailwind CSS 4
+- Geist Sans + Geist Mono via `next/font/google`
+- Framer Motion for orchestration, Lenis for smooth scroll
+- Cloudflare Pages (deploy via `wrangler`)
+
+## Develop
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+pnpm install
+pnpm dev          # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Build & deploy
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+pnpm build        # static export to ./out
+wrangler pages deploy out --project-name koala-brothers --branch main
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+`CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` need to be in the environment for deploys.
 
-## Learn More
+## Layout
 
-To learn more about Next.js, take a look at the following resources:
+```
+src/
+  app/
+    layout.tsx           # fonts, metadata, smooth-scroll
+    page.tsx             # landing page (Hero → Shift → Pain → OS → Products → Roadmap → Founder → CTA)
+    globals.css          # design tokens, double-bezel utilities, motion primitives
+    privacy/             # /privacy
+    terms/               # /terms
+    support/             # /support
+  components/
+    AgentOSDiagram.tsx   # animated SVG architecture (control plane / data plane)
+    Mockups.tsx          # iPhone Brief mockup, Lead list, Channels grid, Crew avatars, Runtime terminal
+    SmoothScroll.tsx     # Lenis client wrapper
+    LegalShell.tsx       # shared chrome for /privacy /terms /support
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Design notes
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Aesthetic**: Apple/Stripe-style premium light. Warm paper background `#fafaf9`, single terracotta accent `#c2410c`, soft eucalyptus secondary.
+- **Typography**: Geist Sans display + body, Geist Mono for labels and metadata.
+- **Cards**: every primary surface uses the double-bezel pattern (`.bezel` outer + `.bezel-inner`).
+- **Motion**: `cubic-bezier(0.16, 1, 0.3, 1)` for entry, spring physics on hover; SVG path-draw + flowing dots in the architecture diagram.
+- **Responsive**: split layouts kick in at `md` (768px) so 900–1023px viewports render correctly.
 
-## Deploy on Vercel
+## License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+All rights reserved · Koala Brothers LLC, 2026.
