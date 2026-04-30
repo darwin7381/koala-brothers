@@ -73,9 +73,9 @@ export default function PrivacyPage() {
 
       <h2>7. International transfers</h2>
       <p>
-        Koala Brothers operates from the United States. By using the Services, you understand that information
-        may be transferred to, stored, and processed in the United States or other countries where our service
-        providers operate.
+        Our Services may be provided using infrastructure and service providers that process information in the
+        United States and other countries. By using the Services, you understand that your information may be
+        transferred to, stored, and processed in jurisdictions outside your place of residence.
       </p>
 
       <h2>8. Security</h2>
@@ -94,14 +94,7 @@ export default function PrivacyPage() {
       <h2>10. Contact</h2>
       <p>
         Questions or requests should be directed to{" "}
-        <a href="mailto:privacy@koalabro.co">privacy@koalabro.co</a>, or by mail to:
-      </p>
-      <p>
-        Koala Brothers LLC
-        <br />
-        Wilmington, Delaware
-        <br />
-        United States
+        <a href="mailto:privacy@koalabro.co">privacy@koalabro.co</a>.
       </p>
     </LegalShell>
   );

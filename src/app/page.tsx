@@ -71,7 +71,7 @@ const PRODUCTS = [
 
 const ROADMAP = [
   { quarter: "Q2 2026", title: "Lead — open beta widens", note: "Apple Developer enrolled in parallel" },
-  { quarter: "Q3 2026", title: "Brief — iOS private alpha", note: "First 5 channel integrations" },
+  { quarter: "Q3 2026", title: "Brief — application private alpha", note: "First 5 channel integrations" },
   { quarter: "Q4 2026", title: "Crew — design partner cohort", note: "Runtime — internal dogfood" },
   { quarter: "2027", title: "Runtime + Crew public beta", note: "macOS native release" },
 ];
@@ -233,7 +233,7 @@ export default function Home() {
                 Apple Developer in registration
               </span>
               <span className="hidden sm:inline opacity-50">·</span>
-              <span className="hidden sm:inline">iOS-first · 2026</span>
+              <span className="hidden sm:inline">Applications · 2026</span>
             </motion.div>
           </div>
 
@@ -271,16 +271,19 @@ export default function Home() {
               className="col-span-12 lg:col-span-6 lg:col-start-7 space-y-6"
             >
               <p className="text-[17px] md:text-[18.5px] leading-[1.6] text-ink-soft max-w-[58ch]">
-                A founder who once needed a marketer, a researcher, a finance
-                lead, and a pair of hands now needs{" "}
-                <strong className="text-ink font-medium">access</strong> to all
-                of them — for an hour, for a Tuesday, for the duration of one
-                decision. AI didn&apos;t just make labour cheaper. It made the
-                shape of a company optional.
+                What used to require a full team can now be{" "}
+                <strong className="text-ink font-medium">accessed on demand</strong>.
               </p>
-              <p className="text-[16.5px] leading-[1.6] text-ink-soft max-w-[58ch]">
-                The team becomes a stack. The hire becomes a config. The morning
-                stand-up becomes a brief.
+              <p className="text-[17px] md:text-[18.5px] leading-[1.6] text-ink-soft max-w-[58ch]">
+                Marketing. Research. Finance. Execution.
+                <br />
+                Exactly when you need it — for a decision, a sprint, or a moment
+                that matters. AI doesn&apos;t just reduce cost. It changes how
+                companies are built.
+              </p>
+              <p className="text-[17px] md:text-[18.5px] leading-[1.6] text-ink-soft max-w-[58ch]">
+                Teams become a stack. You don&apos;t hire roles, you configure
+                them. Standups turn into clear, actionable briefs.
               </p>
             </motion.div>
           </div>
@@ -318,7 +321,7 @@ export default function Home() {
               that hosts your agents and a <strong className="text-ink font-medium">Memory</strong>{" "}
               they all share. Around it: a Crew that does the work, Channels
               that act in the world, and a Brief that brings the result to you.
-              One product. Five iOS modules. Same brain.
+              One product. Five applications. Same brain.
             </motion.p>
           </div>
 
@@ -347,21 +350,21 @@ export default function Home() {
               <h2 className="headline mt-6 text-[clamp(1.7rem,3.6vw,3rem)] text-ink">
                 One OS.
                 <br />
-                <span className="text-accent-deep">Shipping as five iOS apps.</span>
+                <span className="text-accent-deep">Shipping as five applications.</span>
               </h2>
             </div>
             <p className="col-span-12 lg:col-span-5 text-[15.5px] leading-[1.6] text-ink-soft self-end max-w-[46ch]">
-              Each module ships as a standalone app on iOS or macOS. Together
-              they share one runtime, one memory, and one identity — the
-              backbone that makes them feel like a single organism, not five
-              loose tools.
+              Each module ships as a standalone application. Together they
+              share one runtime, one memory, and one identity — the backbone
+              that makes them feel like a single organism, not five loose
+              tools.
             </p>
           </div>
 
           {/* Five apps in flight strip */}
           <FiveAppsStrip />
 
-          <div className="grid grid-cols-12 gap-4 md:gap-5 lg:auto-rows-fr mt-12 md:mt-16">
+          <div className="grid grid-cols-12 gap-4 md:gap-5 mt-12 md:mt-16">
             {PRODUCTS.map((p, idx) => {
               const Mock = p.Mock;
               return (
@@ -477,58 +480,6 @@ export default function Home() {
 
         <div className="max-w-[1400px] mx-auto divider" />
 
-        {/* FOUNDER */}
-        <section id="founder" className="max-w-[1400px] mx-auto py-20 md:py-28 lg:py-36">
-          <div className="grid grid-cols-12 gap-x-6 gap-y-12 items-center">
-            <motion.div {...fadeUp} className="col-span-12 lg:col-span-5">
-              <FounderCard />
-            </motion.div>
-            <motion.div
-              {...fadeUp}
-              transition={{ ...fadeUp.transition, delay: 0.15 }}
-              className="col-span-12 lg:col-span-6 lg:col-start-7"
-            >
-              <span className="eyebrow">
-                <span className="eyebrow-dot" />
-                Founder
-              </span>
-              <h2 className="headline mt-6 text-[clamp(2rem,4.5vw,3.6rem)] text-ink">
-                Joey Luo.
-              </h2>
-              <p className="mt-7 text-[17px] md:text-[18.5px] leading-[1.6] text-ink-soft max-w-[58ch]">
-                Joey is the founder of Koala Brothers and the founder of{" "}
-                <strong className="text-ink font-medium">BlockTempo</strong>, a
-                leading tech and finance media in Asia serving millions of
-                monthly readers.
-              </p>
-              <p className="mt-5 text-[16px] leading-[1.6] text-ink-soft max-w-[58ch]">
-                He spent the last decade scaling editorial operations and is
-                now scaling a different kind of organisation — one that runs on
-                agents instead of headcount. In parallel he runs{" "}
-                <strong className="text-ink font-medium">Crab Labs</strong>, a
-                research practice exploring the multi-agent architecture,
-                channels, memory, and skills Koala Brothers will eventually
-                productise.
-              </p>
-              <div className="mt-9 grid grid-cols-2 gap-4 max-w-[460px]">
-                {[
-                  ["BlockTempo", "Founder"],
-                  ["Crab Labs", "Director"],
-                  ["Koala Brothers", "Founder"],
-                  ["Taipei → Wilmington", "2026"],
-                ].map(([a, b]) => (
-                  <div key={a} className="flex flex-col gap-1">
-                    <span className="text-[13px] text-ink font-medium tracking-[-0.01em]">{a}</span>
-                    <span className="text-[10.5px] text-ink-faint font-mono uppercase tracking-[0.18em]">{b}</span>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
-          </div>
-        </section>
-
-        <div className="max-w-[1400px] mx-auto divider" />
-
         {/* CTA / STAY */}
         <section id="stay" className="max-w-[1400px] mx-auto py-20 md:py-28 lg:py-36">
           <div className="bezel">
@@ -584,7 +535,7 @@ export default function Home() {
 
                 <div className="mt-6 text-[12.5px] text-ink-faint font-mono uppercase tracking-[0.18em]">
                   Or write directly →{" "}
-                  <a href="mailto:hello@koalabro.co" className="text-accent-deep hover:underline">
+                  <a href="mailto:hello@koalabro.co" className="text-accent-deep hover:underline normal-case">
                     hello@koalabro.co
                   </a>
                 </div>
@@ -597,18 +548,17 @@ export default function Home() {
       {/* FOOTER */}
       <footer className="border-t border-hairline mt-12">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 md:px-10 py-10 grid grid-cols-12 gap-y-6 gap-x-6 items-center">
-          <div className="col-span-12 md:col-span-5 flex items-center gap-3">
+          <div className="col-span-12 md:col-span-4 flex items-center gap-3">
             <KoalaMark size={22} />
             <span className="wordmark">Koala Brothers</span>
-            <span className="text-[12px] text-ink-faint font-mono ml-2">© 2026 · Wilmington, DE</span>
           </div>
-          <div className="col-span-6 md:col-span-4 flex items-center gap-5 font-mono text-[11px] uppercase tracking-[0.18em] text-ink-soft">
+          <div className="col-span-6 md:col-span-3 flex items-center gap-5 font-mono text-[11px] uppercase tracking-[0.18em] text-ink-soft">
             <Link href="/privacy/" className="hover:text-ink transition-colors">Privacy</Link>
             <Link href="/terms/" className="hover:text-ink transition-colors">Terms</Link>
             <Link href="/support/" className="hover:text-ink transition-colors">Support</Link>
           </div>
-          <div className="col-span-6 md:col-span-3 md:text-right text-[12px] text-ink-faint font-mono">
-            koalabro.co
+          <div className="col-span-6 md:col-span-5 md:text-right text-[12px] text-ink-faint font-mono">
+            © 2026 Koala Brothers LLC. All rights reserved.
           </div>
         </div>
       </footer>
@@ -663,7 +613,7 @@ const PAIN_POINTS = [
     body:
       "Too small to bring help on. Too busy to compound the work alone. You stall — not because the market said no, but because Tuesday said no.",
     stat: "stuck",
-    statLabel: "between $1M and $5M",
+    statLabel: "thinking headcount, needing a stack",
   },
 ];
 
@@ -751,7 +701,7 @@ function PainPoints() {
 const APP_ICONS = [
   {
     name: "Lead",
-    platforms: ["iOS", "Web"],
+    platforms: ["Application", "Web"],
     status: "Live",
     statusTone: "live" as const,
     glyph: (
@@ -772,7 +722,7 @@ const APP_ICONS = [
   },
   {
     name: "Brief",
-    platforms: ["iOS", "Web"],
+    platforms: ["Application", "Web"],
     status: "In dev",
     statusTone: "wip" as const,
     glyph: (
@@ -794,7 +744,7 @@ const APP_ICONS = [
   },
   {
     name: "Channels",
-    platforms: ["iOS", "macOS"],
+    platforms: ["Application", "macOS"],
     status: "In dev",
     statusTone: "wip" as const,
     glyph: (
@@ -821,7 +771,7 @@ const APP_ICONS = [
   },
   {
     name: "Crew",
-    platforms: ["iOS", "macOS"],
+    platforms: ["Application", "macOS"],
     status: "Soon",
     statusTone: "soon" as const,
     glyph: (
@@ -844,7 +794,7 @@ const APP_ICONS = [
   },
   {
     name: "Runtime",
-    platforms: ["iOS", "macOS"],
+    platforms: ["Application", "macOS"],
     status: "Soon",
     statusTone: "soon" as const,
     glyph: (
@@ -951,77 +901,3 @@ function FiveAppsStrip() {
   );
 }
 
-function FounderCard() {
-  return (
-    <div className="bezel">
-      <div className="bezel-inner aspect-[5/6] relative">
-        {/* gradient bg */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(160deg, #fed7aa 0%, #fff7ed 45%, #ffffff 100%)",
-          }}
-        />
-        {/* fine grid pattern */}
-        <svg className="absolute inset-0 w-full h-full opacity-[0.16]" aria-hidden>
-          <defs>
-            <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
-              <path d="M 32 0 L 0 0 0 32" fill="none" stroke="#0a0a0a" strokeWidth="0.4" />
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#grid)" />
-        </svg>
-
-        {/* Stylised abstract figure */}
-        <svg
-          className="absolute inset-0 w-full h-full"
-          viewBox="0 0 320 384"
-          preserveAspectRatio="xMidYMax meet"
-          aria-hidden
-        >
-          <g transform="translate(160 230)">
-            <path
-              d="M -110 130 C -110 70 -60 40 0 40 C 60 40 110 70 110 130 L 110 170 L -110 170 Z"
-              fill="#0a0a0a"
-            />
-            <circle cx="0" cy="-30" r="68" fill="#fafaf9" stroke="#0a0a0a" strokeWidth="2" />
-            <path
-              d="M -68 -52 C -60 -100 60 -100 68 -52 L 68 -38 C 50 -60 -50 -60 -68 -38 Z"
-              fill="#0a0a0a"
-            />
-            <circle cx="-22" cy="-24" r="3" fill="#0a0a0a" />
-            <circle cx="22" cy="-24" r="3" fill="#0a0a0a" />
-            <path d="M 0 -16 L -3 0 L 3 0 Z" fill="#c2410c" opacity="0.6" />
-            <path d="M -14 14 Q 0 22 14 14" stroke="#0a0a0a" strokeWidth="2" fill="none" strokeLinecap="round" />
-            <path
-              d="M 78 -50 Q 96 -64 102 -82 Q 88 -78 76 -64 Z"
-              fill="#4d7c0f"
-            />
-            <path d="M 78 -50 L 102 -82" stroke="#0a0a0a" strokeWidth="0.6" />
-          </g>
-        </svg>
-
-        {/* Corner labels */}
-        <div className="absolute top-4 left-4 right-4 flex items-center justify-between text-[10px] font-mono uppercase tracking-[0.18em] text-ink-soft">
-          <span>Founder · 2026</span>
-          <span>J. Luo</span>
-        </div>
-
-        {/* Bottom badge */}
-        <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between">
-          <span
-            className="inline-flex items-center gap-1.5 text-[10.5px] uppercase tracking-[0.18em] font-mono font-semibold px-2.5 py-1 rounded-full bg-paper"
-            style={{ boxShadow: "inset 0 0 0 1px rgba(15,23,42,0.08)" }}
-          >
-            <span className="size-1.5 rounded-full pulse-dot" style={{ background: "#047857" }} />
-            On the record
-          </span>
-          <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-ink-soft">
-            koalabro.co/founder
-          </span>
-        </div>
-      </div>
-    </div>
-  );
-}

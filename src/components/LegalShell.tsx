@@ -60,17 +60,19 @@ export default function LegalShell({
         <article className="legal-prose">{children}</article>
       </main>
 
-      <footer className="border-t border-hairline">
-        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 md:px-10 py-10 flex flex-wrap items-center justify-between gap-6">
-          <div className="flex items-center gap-3">
+      <footer className="border-t border-hairline mt-12">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 md:px-10 py-10 grid grid-cols-12 gap-y-6 gap-x-6 items-center">
+          <div className="col-span-12 md:col-span-4 flex items-center gap-3">
             <KoalaMark />
             <span className="wordmark">Koala Brothers</span>
-            <span className="text-[12px] text-ink-faint font-mono ml-2">© 2026 · Wilmington, DE</span>
           </div>
-          <div className="flex items-center gap-5 font-mono text-[11px] uppercase tracking-[0.18em] text-ink-soft">
+          <div className="col-span-6 md:col-span-3 flex items-center gap-5 font-mono text-[11px] uppercase tracking-[0.18em] text-ink-soft">
             <Link href="/privacy/" className="hover:text-ink transition-colors">Privacy</Link>
             <Link href="/terms/" className="hover:text-ink transition-colors">Terms</Link>
             <Link href="/support/" className="hover:text-ink transition-colors">Support</Link>
+          </div>
+          <div className="col-span-6 md:col-span-5 md:text-right text-[12px] text-ink-faint font-mono">
+            © 2026 Koala Brothers LLC. All rights reserved.
           </div>
         </div>
       </footer>

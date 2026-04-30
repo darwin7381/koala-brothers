@@ -32,15 +32,6 @@ export default function SupportPage() {
         <a href="mailto:press@koalabro.co">press@koalabro.co</a>.
       </p>
 
-      <h2>Mailing address</h2>
-      <p>
-        Koala Brothers LLC
-        <br />
-        Wilmington, Delaware
-        <br />
-        United States
-      </p>
-
       <h2>App support</h2>
       <p>
         If you reached this page from inside one of our applications, the same address —{" "}

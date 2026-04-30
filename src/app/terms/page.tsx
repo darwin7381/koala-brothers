@@ -12,8 +12,8 @@ export default function TermsPage() {
       <p>
         These Terms of Service (&ldquo;<strong>Terms</strong>&rdquo;) govern your access to and use of the
         websites, applications, and services provided by Koala Brothers LLC (&ldquo;<strong>Koala Brothers</strong>,&rdquo;
-        &ldquo;<strong>we</strong>,&rdquo; &ldquo;<strong>us</strong>&rdquo;). By using the Services you agree to
-        these Terms.
+        &ldquo;<strong>we</strong>,&rdquo; &ldquo;<strong>us</strong>,&rdquo; or &ldquo;<strong>our</strong>&rdquo;).
+        By using the Services you agree to these Terms.
       </p>
 
       <h2>1. Eligibility</h2>
