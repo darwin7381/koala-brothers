@@ -20,11 +20,12 @@ import { useRef } from "react";
  */
 
 const RECT = {
-  runtime: { x: 400, y: 280, w: 200, h: 160 },
-  brief: { x: 80, y: 300, w: 180, h: 120 },
+  runtime: { x: 400, y: 270, w: 200, h: 160 },
+  brief: { x: 80, y: 290, w: 180, h: 120 },
   memory: { x: 750, y: 60, w: 180, h: 140 },
-  crew: { x: 750, y: 510, w: 180, h: 150 },
-  channels: { x: 410, y: 540, w: 180, h: 100 },
+  crew: { x: 750, y: 470, w: 180, h: 150 },
+  channels: { x: 410, y: 530, w: 180, h: 100 },
+  tools: { x: 80, y: 480, w: 180, h: 180 },
 };
 
 const OWNER = { x: 110, y: 90, r: 30 };
@@ -50,62 +51,71 @@ type Path = {
 };
 
 const PATHS: Path[] = [
-  // Owner ↔ Brief (notify, approve)
+  // Owner ↔ Brief (notify)
   {
     id: "p-own-brief",
-    d: "M 140 90 C 140 220, 170 280, 170 300",
+    d: "M 140 90 C 140 200, 170 260, 170 290",
     label: "notify",
     labelXY: [156, 200],
     primary: true,
     flow: true,
   },
-  // Brief ↔ Runtime (subscribe / poll)
+  // Brief ↔ Runtime (subscribe)
   {
     id: "p-brief-rt",
-    d: "M 260 360 L 400 360",
+    d: "M 260 350 L 400 350",
     label: "subscribe",
-    labelXY: [330, 350],
+    labelXY: [330, 340],
     primary: true,
     flow: true,
   },
   // Memory → Runtime (context)
   {
     id: "p-mem-rt",
-    d: "M 840 200 C 820 240, 600 260, 580 300",
+    d: "M 840 200 C 820 230, 600 250, 580 290",
     label: "context.read",
     labelXY: [718, 220],
     primary: true,
     flow: true,
   },
-  // Crew → Runtime (execute / handoff)
+  // Crew → Runtime (execute)
   {
     id: "p-crew-rt",
-    d: "M 750 580 C 660 560, 580 480, 580 440",
+    d: "M 750 540 C 660 530, 580 460, 580 430",
     label: "execute",
-    labelXY: [675, 540],
+    labelXY: [675, 510],
     primary: true,
     flow: true,
   },
   // Runtime → Channels (dispatch)
   {
     id: "p-rt-ch",
-    d: "M 500 440 L 500 540",
+    d: "M 500 430 L 500 530",
     label: "dispatch",
-    labelXY: [510, 488],
+    labelXY: [510, 478],
+    primary: true,
+    flow: true,
+  },
+  // Channels → Tools (side_effects)
+  {
+    id: "p-ch-tools",
+    d: "M 410 580 C 320 590, 240 580, 200 560",
+    label: "side_effects",
+    labelXY: [310, 600],
     primary: true,
     flow: true,
   },
   // Memory ↔ Crew (read+write back)
   {
     id: "p-mem-crew",
-    d: "M 935 200 C 970 350, 970 430, 935 510",
+    d: "M 935 200 C 970 330, 970 410, 935 470",
     label: "read • write",
-    labelXY: [950, 360],
+    labelXY: [950, 340],
   },
   // Owner → Runtime (approve), faint
   {
     id: "p-own-rt",
-    d: "M 144 110 C 280 130, 360 220, 410 300",
+    d: "M 144 110 C 280 130, 360 210, 410 290",
     label: "approve",
     labelXY: [240, 158],
   },
@@ -677,70 +687,72 @@ export default function AgentOSDiagram({
           </g>
         </CardNode>
 
-        {/* External tools cluster (bottom right, below DATA PLANE label area) */}
-        <g>
+        {/* External tools card — bottom-left */}
+        <CardNode rect={RECT.tools} fillId="card-fill" inView={inView} delay={0.95}>
           <text
-            x={620}
-            y={680}
+            x={RECT.tools.x + 18}
+            y={RECT.tools.y + 28}
+            fontFamily="var(--font-geist-sans)"
+            fontWeight={500}
+            fontSize="18"
+            fill="#0a0a0a"
+            style={{ letterSpacing: "-0.02em" }}
+          >
+            External
+          </text>
+          <text
+            x={RECT.tools.x + 18}
+            y={RECT.tools.y + 42}
             fontFamily="var(--font-geist-mono)"
             fontSize="9"
-            letterSpacing="1.8"
+            letterSpacing="2.2"
             fill="#71717a"
             style={{ textTransform: "uppercase" }}
           >
-            external — gmail · calendar · slack · github · stripe · telegram
+            the world
           </text>
-          <line x1="620" y1="660" x2="940" y2="660" stroke="rgba(194,65,12,0.3)" strokeDasharray="2 3" strokeWidth="0.6" />
+          {/* tool list rows */}
           {TOOLS.map((t, i) => (
-            <motion.g
-              key={t.label}
-              initial={{ opacity: 0, y: 6 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 1.1 + i * 0.07 }}
-            >
+            <g key={t.label}>
               <rect
-                x={620 + i * 56}
-                y={638}
-                width="42"
-                height="18"
-                rx="4"
-                fill="#ffffff"
-                stroke="rgba(15,23,42,0.08)"
+                x={RECT.tools.x + 18}
+                y={RECT.tools.y + 56 + i * 19}
+                width={RECT.tools.w - 36}
+                height="15"
+                rx="3.5"
+                fill="#fafaf9"
+                stroke="rgba(15,23,42,0.06)"
               />
               <rect
-                x={624 + i * 56}
-                y={642}
-                width="10"
-                height="10"
-                rx="2.5"
+                x={RECT.tools.x + 22}
+                y={RECT.tools.y + 59 + i * 19}
+                width="9"
+                height="9"
+                rx="2"
                 fill={t.color}
-                opacity="0.85"
+                opacity="0.9"
               />
               <text
-                x={638 + i * 56}
-                y={651}
+                x={RECT.tools.x + 38}
+                y={RECT.tools.y + 67 + i * 19}
                 fontFamily="var(--font-geist-mono)"
-                fontSize="7.5"
-                letterSpacing="1"
+                fontSize="8.5"
+                letterSpacing="1.4"
                 fill="#525252"
                 style={{ textTransform: "uppercase" }}
               >
-                {t.label.slice(0, 6)}
+                {t.label}
               </text>
-            </motion.g>
+              <circle
+                cx={RECT.tools.x + RECT.tools.w - 26}
+                cy={RECT.tools.y + 64 + i * 19}
+                r="2"
+                fill="#047857"
+                opacity={i < 3 ? 0.85 : 0.35}
+              />
+            </g>
           ))}
-          {/* dispatch line from Channels to tools */}
-          <motion.path
-            d="M 500 640 C 500 650, 580 655, 620 650"
-            fill="none"
-            stroke="url(#conn-stroke)"
-            strokeWidth="1"
-            strokeDasharray="2 3"
-            initial={{ pathLength: 0, opacity: 0 }}
-            animate={inView ? { pathLength: 1, opacity: 0.6 } : {}}
-            transition={{ duration: 1, delay: 1.2 }}
-          />
-        </g>
+        </CardNode>
 
         {/* Coordinate corner ticks */}
         {variant === "full" && (
