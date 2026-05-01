@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <LegalShell numeral="§" eyebrow="Legal" title="Privacy Policy" effective="April 29, 2026">
+    <LegalShell numeral="§" eyebrow="Legal" title="Privacy Policy">
       <p>
         Koala Brothers LLC (&ldquo;<strong>Koala Brothers</strong>,&rdquo; &ldquo;<strong>we</strong>,&rdquo;
         &ldquo;<strong>us</strong>,&rdquo; or &ldquo;<strong>our</strong>&rdquo;) respects your privacy. This
@@ -87,8 +87,8 @@ export default function PrivacyPage() {
 
       <h2>9. Changes to this policy</h2>
       <p>
-        We may update this Privacy Policy from time to time. When we do, we will revise the &ldquo;Effective&rdquo;
-        date above and, where appropriate, provide additional notice.
+        We may update this Privacy Policy from time to time. When we do, we will, where appropriate, provide
+        additional notice.
       </p>
 
       <h2>10. Contact</h2>

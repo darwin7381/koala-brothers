@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function SupportPage() {
   return (
-    <LegalShell numeral="§" eyebrow="Help" title="Support." effective="April 29, 2026">
+    <LegalShell numeral="§" eyebrow="Help" title="Support.">
       <p>
         Koala Brothers is a small studio. There&apos;s no support ticket queue or chatbot — just an email
         address that lands in a real human&apos;s inbox.

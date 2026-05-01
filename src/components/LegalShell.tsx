@@ -3,13 +3,11 @@ import Link from "next/link";
 export default function LegalShell({
   eyebrow,
   title,
-  effective,
   children,
 }: {
   numeral?: string;
   eyebrow: string;
   title: string;
-  effective: string;
   children: React.ReactNode;
 }) {
   return (
@@ -50,9 +48,6 @@ export default function LegalShell({
           <h1 className="headline mt-6 text-[clamp(2.4rem,5vw,4rem)] text-ink">
             {title}
           </h1>
-          <div className="mt-4 text-[12px] uppercase tracking-[0.2em] text-ink-faint font-mono">
-            Effective {effective}
-          </div>
         </div>
 
         <div className="divider mb-12" />

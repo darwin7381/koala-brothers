@@ -222,19 +222,6 @@ export default function Home() {
                 </svg>
               </a>
             </motion.div>
-
-            <motion.div
-              {...fadeUp}
-              transition={{ ...fadeUp.transition, delay: 0.65 }}
-              className="mt-9 flex flex-wrap items-center gap-x-5 gap-y-2 text-[12px] text-ink-faint font-mono uppercase tracking-[0.16em]"
-            >
-              <span className="flex items-center gap-2">
-                <span className="size-1.5 rounded-full pulse-dot" style={{ background: "#047857" }} />
-                Apple Developer in registration
-              </span>
-              <span className="hidden sm:inline opacity-50">·</span>
-              <span className="hidden sm:inline">Applications · 2026</span>
-            </motion.div>
           </div>
 
           {/* Hero right — phone mockup */}

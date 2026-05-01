@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function TermsPage() {
   return (
-    <LegalShell numeral="§" eyebrow="Legal" title="Terms of Service" effective="April 29, 2026">
+    <LegalShell numeral="§" eyebrow="Legal" title="Terms of Service">
       <p>
         These Terms of Service (&ldquo;<strong>Terms</strong>&rdquo;) govern your access to and use of the
         websites, applications, and services provided by Koala Brothers LLC (&ldquo;<strong>Koala Brothers</strong>,&rdquo;
@@ -52,16 +52,16 @@ export default function TermsPage() {
 
       <h2>6. Disclaimers</h2>
       <p>
-        EXCEPT AS EXPRESSLY PROVIDED, THE SERVICES ARE PROVIDED &ldquo;AS IS&rdquo; AND &ldquo;AS AVAILABLE&rdquo;
-        WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WARRANTIES OF MERCHANTABILITY,
-        FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.
+        Except as expressly provided, the Services are provided &ldquo;as is&rdquo; and &ldquo;as available&rdquo;
+        without warranties of any kind, either express or implied, including warranties of merchantability,
+        fitness for a particular purpose, and non-infringement.
       </p>
 
       <h2>7. Limitation of liability</h2>
       <p>
-        TO THE MAXIMUM EXTENT PERMITTED BY LAW, KOALA BROTHERS WILL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL,
-        SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR FOR LOST PROFITS, REVENUES, OR DATA, ARISING OUT OF OR
-        IN CONNECTION WITH YOUR USE OF THE SERVICES.
+        To the maximum extent permitted by law, Koala Brothers will not be liable for any indirect, incidental,
+        special, consequential, or punitive damages, or for lost profits, revenues, or data, arising out of or
+        in connection with your use of the Services.
       </p>
 
       <h2>8. Termination</h2>
@@ -72,9 +72,8 @@ export default function TermsPage() {
 
       <h2>9. Changes</h2>
       <p>
-        We may modify these Terms from time to time. If we make material changes we will notify you, for example
-        by updating the &ldquo;Effective&rdquo; date. Your continued use of the Services after changes take effect
-        constitutes acceptance of the new Terms.
+        We may modify these Terms from time to time. If we make material changes we will notify you. Your
+        continued use of the Services after changes take effect constitutes acceptance of the new Terms.
       </p>
 
       <h2>10. Governing law</h2>
